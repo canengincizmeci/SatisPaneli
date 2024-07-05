@@ -1,0 +1,31 @@
+﻿@model List<SatisPaneli.Models.MyModels.Urun>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ürün Ad</th>
+            <th>Kategori</th>
+            <th>Miktar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.UrunAd</td>
+                <td>@urun.KategoriAd</td>
+                <td>@urun.Miktar</td>
+                <td><a href="@Url.Action("SatinAl","Home")">Satın Al</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
